@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://www.charkhkook.com/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <image:image>
+      <image:loc>https://www.charkhkook.com/assets/images/charkh-kook-banner.jpg</image:loc>
+      <image:title>چرخ کوک؛ تعمیر تخصصی چرخ خیاطی</image:title>
+      <image:caption>بنر برند چرخ کوک برای خدمات تعمیر تخصصی چرخ خیاطی</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.charkhkook.com/assets/images/repair-hero-corrected.jpg</image:loc>
+      <image:caption>تصویر نمایشی از فرایند تعمیر چرخ خیاطی</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.charkhkook.com/assets/images/repair-domestic.webp</image:loc>
+      <image:caption>تصویر نمایشی از تنظیم چرخ خیاطی خانگی</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.charkhkook.com/assets/images/repair-industrial.webp</image:loc>
+      <image:caption>تصویر نمایشی از بررسی چرخ خیاطی صنعتی</image:caption>
+    </image:image>
+  </url>
+</urlset>

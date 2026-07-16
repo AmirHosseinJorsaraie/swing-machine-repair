@@ -1,0 +1,16 @@
+# Dependencies and generated output
+/node_modules/
+/dist/
+/outputs/
+
+# Local tooling and logs
+/.tools/
+/.wrangler/
+/.codex-dev.*.log
+/.node-server.*.log
+npm-debug.log*
+
+# Environment and OS files
+.env*
+.DS_Store
+Thumbs.db

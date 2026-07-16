@@ -1,0 +1,17 @@
+{
+  "name": "swing-machine-repair-static-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pure HTML, CSS and JavaScript landing page served by Node.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "check": "npm run build && npm test"
+  }
+}

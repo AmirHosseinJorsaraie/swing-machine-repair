@@ -1,0 +1,21 @@
+{
+  "name": "چرخ کوک | تعمیر تخصصی چرخ خیاطی",
+  "short_name": "چرخ کوک",
+  "description": "تعمیر و سرویس تخصصی چرخ خیاطی خانگی و صنعتی",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#12211d",
+  "lang": "fa-IR",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
