@@ -31,6 +31,9 @@
 }
 
 html {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 104px;
   background: var(--paper);
@@ -38,7 +41,9 @@ html {
 
 body {
   margin: 0;
+  max-width: 100%;
   min-width: 320px;
+  overflow-x: hidden;
   overflow-x: clip;
   background:
     radial-gradient(circle at 6% 8%, rgba(193, 138, 61, 0.08), transparent 28rem),
@@ -134,8 +139,10 @@ summary {
 .site-header {
   position: fixed;
   z-index: 100;
+  width: 100%;
   inset-block-start: 0;
-  inset-inline: 0;
+  right: 0;
+  left: 0;
   border-block-end: 1px solid rgba(255, 252, 246, 0.12);
   background: rgba(18, 33, 29, 0.9);
   color: var(--surface);
@@ -2167,6 +2174,11 @@ summary {
     font-size: 15px;
   }
 
+  .js [data-reveal="from-right"],
+  .js [data-reveal="from-left"] {
+    transform: translateY(22px);
+  }
+
   .brand-copy small {
     display: none;
   }
@@ -2412,7 +2424,10 @@ summary {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    inset-inline: 12px;
+    width: auto;
+    max-width: calc(100% - 24px);
+    right: 12px;
+    left: 12px;
     inset-block-end: 12px;
     padding: 10px 20px;
     border: 1px solid rgba(255, 252, 246, 0.14);

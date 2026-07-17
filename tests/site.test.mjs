@@ -42,7 +42,7 @@ test("the source is a complete, framework-free Persian document", async () => {
   assert.match(html, /"@type": "GeoCoordinates"/i);
   assert.match(html, /"latitude": 35\.676181791404275/i);
   assert.match(html, /"longitude": 51\.41692507968156/i);
-  assert.match(html, /<link rel="stylesheet" href="\/styles\.css">/i);
+  assert.match(html, /<link rel="stylesheet" href="\/styles\.css\?v=20260717">/i);
   assert.match(
     html,
     /rel="preload"[\s\S]*?href="\/assets\/fonts\/iransharp_regular_web\.ttf"[\s\S]*?as="font"/i,
@@ -51,7 +51,7 @@ test("the source is a complete, framework-free Persian document", async () => {
     html,
     /href="\/assets\/images\/repair-hero-corrected\.jpg"[\s\S]*?as="image"[\s\S]*?type="image\/jpeg"/i,
   );
-  assert.match(html, /<script src="\/script\.js" defer><\/script>/i);
+  assert.match(html, /<script src="\/script\.js\?v=20260717" defer><\/script>/i);
   assert.match(html, /width="1536"\s+height="983"/i);
   assert.match(html, /width="1536"\s+height="959"/i);
   assert.match(html, /src="\/assets\/images\/repair-hero-corrected\.jpg"/i);
@@ -113,6 +113,16 @@ test("responsive and reduced-motion behavior remain in plain CSS", async () => {
   assert.match(css, /@media \(max-width: 1120px\)/);
   assert.match(css, /@media \(max-width: 920px\)/);
   assert.match(css, /@media \(max-width: 680px\)/);
+  assert.match(css, /html \{[\s\S]*?overflow-x: hidden;[\s\S]*?overflow-x: clip;/);
+  assert.match(css, /\.site-header \{[\s\S]*?right: 0;[\s\S]*?left: 0;/);
+  assert.match(
+    css,
+    /@media \(max-width: 680px\)[\s\S]*?\[data-reveal="from-right"\],[\s\S]*?\[data-reveal="from-left"\][\s\S]*?translateY\(22px\)/,
+  );
+  assert.match(
+    css,
+    /\.floating-contact \{[\s\S]*?max-width: calc\(100% - 24px\);[\s\S]*?right: 12px;[\s\S]*?left: 12px;/,
+  );
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /@font-face[\s\S]*?font-family: "IRANSharp"/);
   assert.match(css, /font-display: swap/);
