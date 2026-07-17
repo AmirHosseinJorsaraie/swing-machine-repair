@@ -191,21 +191,11 @@ export function createStaticServer({ siteRoot = defaultSiteRoot } = {}) {
   });
 }
 
-const isMainModule =
-  process.argv[1] &&
-  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+const port = Number.parseInt(process.env.PORT ?? "3000", 10);
+const host = process.env.HOST ?? "0.0.0.0";
 
-if (isMainModule) {
-  const portFlag = process.argv.indexOf("--port");
-  const hostFlag = process.argv.indexOf("--host");
-  const portValue =
-    portFlag >= 0 ? process.argv[portFlag + 1] : process.env.PORT ?? "3000";
-  const host =
-    hostFlag >= 0 ? process.argv[hostFlag + 1] : process.env.HOST ?? "0.0.0.0";
-  const port = Number.parseInt(portValue, 10);
-  const server = createStaticServer();
+const server = createStaticServer();
 
-  server.listen(Number.isFinite(port) ? port : 3000, host, () => {
-    console.log(`Static site running at http://localhost:${Number.isFinite(port) ? port : 3000}`);
-  });
-}
+server.listen(Number.isFinite(port) ? port : 3000, host, () => {
+    console.log(`Static site running at http://${host}:${port}`);
+});
