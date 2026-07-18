@@ -42,10 +42,10 @@ test("the source is a complete, framework-free Persian document", async () => {
   assert.match(html, /"@type": "GeoCoordinates"/i);
   assert.match(html, /"latitude": 35\.676181791404275/i);
   assert.match(html, /"longitude": 51\.41692507968156/i);
-  assert.match(html, /<link rel="stylesheet" href="\/styles\.css\?v=20260717">/i);
+  assert.match(html, /<link rel="stylesheet" href="\/styles\.css\?v=20260718">/i);
   assert.match(
     html,
-    /rel="preload"[\s\S]*?href="\/assets\/fonts\/iransharp_regular_web\.ttf"[\s\S]*?as="font"/i,
+    /rel="preload"[\s\S]*?href="\/assets\/fonts\/Yekan\.ttf"[\s\S]*?as="font"/i,
   );
   assert.match(
     html,
@@ -124,7 +124,7 @@ test("responsive and reduced-motion behavior remain in plain CSS", async () => {
     /\.floating-contact \{[\s\S]*?max-width: calc\(100% - 24px\);[\s\S]*?right: 12px;[\s\S]*?left: 12px;/,
   );
   assert.match(css, /prefers-reduced-motion: reduce/);
-  assert.match(css, /@font-face[\s\S]*?font-family: "IRANSharp"/);
+  assert.match(css, /@font-face[\s\S]*?font-family: "Yekan"/);
   assert.match(css, /font-display: swap/);
   assert.match(css, /@keyframes hero-copy-in/);
   assert.match(css, /@keyframes carousel-focus/);
@@ -179,7 +179,7 @@ test("Node server serves SEO HTML with security and cache headers", async (t) =>
 test("Node server serves the local font with the correct type and cache policy", async (t) => {
   const origin = await startTestServer(t);
   const response = await fetch(
-    `${origin}/assets/fonts/iransharp_regular_web.ttf`,
+    `${origin}/assets/fonts/Yekan.ttf`,
   );
 
   assert.equal(response.status, 200);

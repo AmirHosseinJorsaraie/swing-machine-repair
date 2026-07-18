@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "IRANSharp";
+  font-family: "Yekan";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/iransharp_regular_web.ttf") format("truetype");
+  src: url("/assets/fonts/Yekan.ttf") format("truetype");
 }
 
 :root {
@@ -49,7 +49,7 @@ body {
     radial-gradient(circle at 6% 8%, rgba(193, 138, 61, 0.08), transparent 28rem),
     var(--paper);
   color: var(--ink);
-  font-family: "IRANSharp", Tahoma, "Segoe UI", Arial, sans-serif;
+  font-family: "Yekan", Tahoma, "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.85;
   text-rendering: optimizeLegibility;
@@ -99,7 +99,7 @@ p {
 h1,
 h2,
 h3 {
-  font-family: "IRANSharp", Tahoma, "Segoe UI", Arial, sans-serif;
+  font-family: "Yekan", Tahoma, "Segoe UI", Arial, sans-serif;
   font-weight: 800;
   line-height: 1.32;
   letter-spacing: -0.035em;
