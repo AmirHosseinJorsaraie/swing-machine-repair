@@ -42,7 +42,7 @@ test("the source is a complete, framework-free Persian document", async () => {
   assert.match(html, /"@type": "GeoCoordinates"/i);
   assert.match(html, /"latitude": 35\.676181791404275/i);
   assert.match(html, /"longitude": 51\.41692507968156/i);
-  assert.match(html, /<link rel="stylesheet" href="\/styles\.css\?v=20260718">/i);
+  assert.match(html, /<link rel="stylesheet" href="\/styles\.css\?v=20260718-5">/i);
   assert.match(
     html,
     /rel="preload"[\s\S]*?href="\/assets\/fonts\/Yekan\.ttf"[\s\S]*?as="font"/i,
@@ -51,6 +51,16 @@ test("the source is a complete, framework-free Persian document", async () => {
     html,
     /href="\/assets\/images\/repair-hero-corrected\.jpg"[\s\S]*?as="image"[\s\S]*?type="image\/jpeg"/i,
   );
+  assert.match(html, /rel="icon" href="\/assets\/images\/favicon\.png" type="image\/png"/i);
+  assert.match(html, /rel="apple-touch-icon" href="\/assets\/images\/favicon\.png"/i);
+  assert.match(html, /"logo": "https:\/\/www\.charkhkook\.com\/assets\/images\/logo\.jpg"/i);
+  assert.match(html, /"sameAs": \[[\s\S]*?https:\/\/www\.instagram\.com\/charkh_khayati_vaziri\//i);
+  assert.equal((html.match(/src="\/assets\/images\/logo\.jpg"/gi) ?? []).length, 2);
+  assert.match(
+    html,
+    /class="brand-logo"[\s\S]*?alt="لوگوی چرخ کوک، تعمیر تخصصی چرخ خیاطی"[\s\S]*?width="1040"[\s\S]*?height="840"/i,
+  );
+  assert.match(html, /class="brand brand-footer"[\s\S]*?loading="lazy"/i);
   assert.match(html, /<script src="\/script\.js\?v=20260717" defer><\/script>/i);
   assert.match(html, /width="1536"\s+height="983"/i);
   assert.match(html, /width="1536"\s+height="959"/i);
@@ -73,6 +83,13 @@ test("the source is a complete, framework-free Persian document", async () => {
   assert.doesNotMatch(html, /tel:\+989121234567|wa\.me\/989121234567/i);
   assert.match(html, /href="tel:\+989124091885"/i);
   assert.match(html, /href="https:\/\/wa\.me\/989124091885"/i);
+  assert.match(
+    html,
+    /href="https:\/\/www\.instagram\.com\/charkh_khayati_vaziri\?igsh=MWIzdjNqZ21zaHYxZw=="[\s\S]*?target="_blank"[\s\S]*?rel="noopener noreferrer"/i,
+  );
+  assert.match(html, /class="instagram-icon" aria-hidden="true"/i);
+  assert.match(html, /<i class="instagram-icon" aria-hidden="true"><\/i>اینستاگرام چرخ کوک<\/span><\/a>/i);
+  assert.doesNotMatch(html, />@charkh_khayati_vaziri</i);
   assert.match(html, /۰۹۱۲ ۴۰۹ ۱۸۸۵/);
   assert.doesNotMatch(html, /989212968977|0921 296 8977/i);
   assert.match(html, /class="header-cta" href="#contact"/i);
@@ -126,6 +143,11 @@ test("responsive and reduced-motion behavior remain in plain CSS", async () => {
   assert.match(css, /prefers-reduced-motion: reduce/);
   assert.match(css, /@font-face[\s\S]*?font-family: "Yekan"/);
   assert.match(css, /font-display: swap/);
+  assert.match(css, /\.brand-logo \{[\s\S]*?aspect-ratio: 26 \/ 21;[\s\S]*?object-fit: cover;/);
+  assert.match(css, /\.contact-direct \.contact-action-primary \{[\s\S]*?grid-column: 1 \/ -1;/);
+  assert.match(css, /\.contact-direct \.contact-action-instagram \{[\s\S]*?justify-content: center;/);
+  assert.match(css, /\.instagram-icon::before/);
+  assert.match(css, /\.instagram-icon::after/);
   assert.match(css, /@keyframes hero-copy-in/);
   assert.match(css, /@keyframes carousel-focus/);
   assert.match(css, /@keyframes contact-pulse/);

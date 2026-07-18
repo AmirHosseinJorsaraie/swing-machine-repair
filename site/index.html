@@ -43,7 +43,8 @@
     <meta name="twitter:image" content="https://www.charkhkook.com/assets/images/og.png">
     <meta name="twitter:image:alt" content="چرخ کوک؛ تعمیر تخصصی چرخ خیاطی">
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link
       rel="preload"
@@ -59,7 +60,7 @@
       type="image/jpeg"
       fetchpriority="high"
     >
-    <link rel="stylesheet" href="/styles.css?v=20260718">
+    <link rel="stylesheet" href="/styles.css?v=20260718-5">
     <script src="/script.js?v=20260717" defer></script>
 
     <script type="application/ld+json">
@@ -72,6 +73,10 @@
             "name": "چرخ کوک",
             "alternateName": "Charkh Kook",
             "url": "https://www.charkhkook.com/",
+            "logo": "https://www.charkhkook.com/assets/images/logo.jpg",
+            "sameAs": [
+              "https://www.instagram.com/charkh_khayati_vaziri/"
+            ],
             "telephone": "+989124091885",
             "contactPoint": {
               "@type": "ContactPoint",
@@ -164,11 +169,14 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#top" aria-label="چرخ کوک، صفحه اصلی">
-          <span class="brand-mark" aria-hidden="true">چ</span>
-          <span class="brand-copy">
-            <strong>چرخ کوک</strong>
-            <small>تعمیر تخصصی چرخ خیاطی</small>
-          </span>
+          <img
+            class="brand-logo"
+            src="/assets/images/logo.jpg"
+            alt="لوگوی چرخ کوک، تعمیر تخصصی چرخ خیاطی"
+            width="1040"
+            height="840"
+            decoding="async"
+          >
         </a>
 
         <nav class="desktop-nav" aria-label="منوی اصلی">
@@ -513,8 +521,15 @@
             <h2>چرخ‌تان را <span>دوباره به کار برگردانیم</span></h2>
             <p>مدل دستگاه و نشانه خرابی را بفرستید.</p>
             <div class="contact-direct">
-              <a href="tel:+989124091885"><span>تماس مستقیم</span><bdi dir="ltr">۰۹۱۲ ۴۰۹ ۱۸۸۵</bdi></a>
+              <a class="contact-action-primary" href="tel:+989124091885"><span>تماس مستقیم</span><bdi dir="ltr">۰۹۱۲ ۴۰۹ ۱۸۸۵</bdi></a>
               <a href="https://wa.me/989124091885" target="_blank" rel="noopener noreferrer"><span>پیام در واتساپ</span><bdi dir="ltr">۰۹۱۲ ۴۰۹ ۱۸۸۵</bdi></a>
+              <a
+                class="contact-action-instagram"
+                href="https://www.instagram.com/charkh_khayati_vaziri?igsh=MWIzdjNqZ21zaHYxZw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="مشاهده صفحه اینستاگرام چرخ کوک"
+              ><span><i class="instagram-icon" aria-hidden="true"></i>اینستاگرام چرخ کوک</span></a>
             </div>
             <div class="contact-meta">
               <div><small>محدوده خدمات</small><strong>تهران و حومه</strong></div>
@@ -553,9 +568,16 @@
 
     <footer class="site-footer">
       <div class="footer-main">
-        <a class="brand brand-footer" href="#top">
-          <span class="brand-mark" aria-hidden="true">چ</span>
-          <span class="brand-copy"><strong>چرخ کوک</strong><small>تعمیر تخصصی چرخ خیاطی</small></span>
+        <a class="brand brand-footer" href="#top" aria-label="چرخ کوک، بازگشت به ابتدای صفحه">
+          <img
+            class="brand-logo"
+            src="/assets/images/logo.jpg"
+            alt="لوگوی چرخ کوک، تعمیر تخصصی چرخ خیاطی"
+            width="1040"
+            height="840"
+            loading="lazy"
+            decoding="async"
+          >
         </a>
         <p>عیب‌یابی، سرویس و تعمیر چرخ خیاطی خانگی و صنعتی در تهران.</p>
         <nav aria-label="پیوندهای پایین صفحه">
